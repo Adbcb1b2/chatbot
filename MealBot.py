@@ -9,15 +9,17 @@ class MealRecommenderBot:
         load_dotenv()
 
         api_key = os.getenv("OPENAI_API_KEY")
-        # Create an OpenAI client instance using the new SDK
+        # Create an OpenAI client instance 
         self.client = OpenAI(api_key=api_key)
 
         # Define the system prompt to guide the assistant's behaviour this will be used to set the context for the conversation
         self.system_prompt = (
-            "You are a helpful and creative meal planning assistant."
-            " Your job is to recommend meals based on user preferences, dietary needs, or specific constraints."
-            " Always respond with a full meal suggestion, including the dish name, ingredients, and basic instructions."
-            " Avoid any ingredients the user mentions as dislikes or allergies."
+            "You are a friendly, knowledgeable, and responsive meal planning assistant designed to engage in natural conversation with users."
+            " Begin by greeting the user and asking if they have any dietary preferences, dislikes, allergies, or nutritional goals."
+            " Recommend meals based on this information, ensuring that each response includes a specific dish name, a list of ingredients, and simple cooking instructions."
+            " Always avoid any ingredients the user has indicated they dislike or are allergic to."
+            " If a user's input is unclear or lacks detail, ask relevant follow-up questions to clarify their needs and guide the conversation."
+            " Maintain a helpful, polite tone, and tailor responses to the user’s needs to enhance user experience."
         )
 
     # Method to send a message to the OpenAI API and get a response
