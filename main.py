@@ -1,7 +1,8 @@
-import VirtualAssistant
+from VirtualAssistant import VirtualAssistant
 
 
 # Start the chatbot
+
 myChatBot = VirtualAssistant()
 print("Welcome to the Virtual Assistant! Type 'exit' to end the conversation.")
 
